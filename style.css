@@ -1,0 +1,238 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== Cabeçalho UFOPA ====== */
+.cabecalho-ufopa {
+  text-align: center;
+  padding: 20px 10px;
+  background: #fff;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cabecalho-ufopa .logo-ufopa {
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.cabecalho-ufopa h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #1f4e79;   /* Azul institucional */
+}
+
+.cabecalho-ufopa h2 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.cabecalho-ufopa h3 {
+  font-size: 1rem;
+  margin-bottom: 2px;
+  color: #444;
+}
+
+.cabecalho-ufopa h4 {
+  font-size: 1.2rem;
+  margin-top: 8px;
+  color: #0a6b2b;   /* Um verde para destaque */
+  font-weight: 600;
+}
+
+body {
+  background-color: #e2e2e2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* --- Seção Calculadora + Passo a Passo --- */
+.secao-calculadora {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.calculadora {
+  width: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background: #fff;
+}
+
+.topo {
+  padding: 10px 16px;
+  background: linear-gradient(90deg, #1f7bd9, #3bd1ff);
+  color: white;
+}
+.topo h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.display {
+  background: #111;
+  color: #fff;
+  padding: 18px;
+  text-align: right;
+  font-size: clamp(1.2rem, 3.5vw, 2.4rem);
+  min-height: 54px;
+  word-break: break-all;
+}
+
+.passos-area {
+  flex: 1;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.passos-area h2 {
+  margin-bottom: 10px;
+}
+
+#passos {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+/* --- Botões Científicos --- */
+.botoes-cientificos {
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.botoes-cientificos button {
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* --- Botões principais --- */
+.botoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 12px;
+  background: #fff;
+}
+.botoes button {
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background: #fafafa;
+  transition: all 0.12s;
+}
+.botoes button:hover {
+  filter: brightness(.98);
+  transform: translateY(-1px);
+}
+.botoes button:active {
+  transform: translateY(0);
+}
+
+.igual { background: #4CAF50; color: #fff; }
+.limpar { background: #ffdddd; }
+
+/* --- Seção Gráfico --- */
+.secao-grafico {
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#grafico {
+  width: 100%;
+  height: 400px;
+}
+
+.btn-plot {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-plot:hover { background: #45a049; }
+
+/* --- Seção Créditos --- */
+.secao-creditos {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.secao-creditos .pessoa {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.secao-creditos img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.secao-creditos h3 { font-size: 1.1rem; }
+.secao-creditos p { font-size: 0.9rem; color: #555; }
+
+/* --- Responsividade --- */
+@media (max-width: 1024px) {
+  .secao-calculadora {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .passos-area {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 420px) {
+  .calculadora { width: 94vw; }
+  .botoes { gap: 5px; }
+  .botoes-cientificos { gap: 4px; }
+  .secao-creditos .pessoa { flex-direction: column; text-align: center; }
+  .secao-creditos img { width: 60px; height: 60px; }
+}

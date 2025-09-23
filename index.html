@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Científica + Gráfico</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="cabecalho-ufopa">
+  <img src="logo_ufopa.png" alt="Logo UFOPA" class="logo-ufopa">
+  <h1>Universidade Federal do Oeste do Pará</h1>
+  <h2>Instituto de Engenharia e Geociências</h2>
+  <h3>Programação II</h3>
+  <h4>Calculadora IEG</h4>
+</header>
+  <!-- Seção 1: Calculadora + Passo a Passo -->
+  <section class="secao-calculadora">
+    <!-- Calculadora -->
+    <div class="calculadora">
+      <div class="topo">
+        <h1>Calculadora Científica</h1>
+      </div>
+      <div id="display" class="display">0</div>
+
+      <!-- Botões científicos -->
+      <div class="botoes-cientificos">
+        <button data-type="func" data-value="sin(">sin</button>
+        <button data-type="func" data-value="cos(">cos</button>
+        <button data-type="func" data-value="log(">ln</button>
+        <button data-type="func" data-value="exp(">eˣ</button>
+        <button data-type="const" data-value="pi">π</button>
+        <button data-type="operador" data-value=")">)</button>
+        <button data-type="operador" data-value="("> ( </button>
+      </div>
+
+      <!-- Botões principais -->
+      <div class="botoes">
+        <button data-type="acao" id="btn-limite">lim</button>
+        <button data-type="acao" id="btn-derivada">d/dx</button>
+        <button data-type="acao" id="btn-quadrado">x²</button>
+        <button data-type="acao" id="btn-raiz">√</button>
+
+        <button data-type="numero">7</button>
+        <button data-type="numero">8</button>
+        <button data-type="numero">9</button>
+        <button data-type="operador" data-value="/">/</button>
+
+        <button data-type="numero">4</button>
+        <button data-type="numero">5</button>
+        <button data-type="numero">6</button>
+        <button data-type="operador" data-value="*">*</button>
+
+        <button data-type="numero">1</button>
+        <button data-type="numero">2</button>
+        <button data-type="numero">3</button>
+        <button data-type="operador" data-value="-">-</button>
+
+        <button data-type="numero">.</button>
+        <button data-type="numero">0</button>
+        <button data-type="acao" id="btn-igual">=</button>
+        <button data-type="operador" data-value="+">+</button>
+
+        <button data-type="acao" id="btn-limpar-tudo" class="limpar">C</button>
+        <button data-type="acao" id="btn-backspace" class="limpar">←</button>
+        <button data-type="acao" id="btn-historico">Hist</button>
+        <button data-type="acao" id="btn-toggle-theme">Tema</button>
+      </div>
+    </div>
+
+        <!-- Passo a Passo -->
+    <div class="passos-area">
+      <h2>Como Resolver</h2>
+      <div id="passos"></div>
+    </div>
+  </section>
+
+  <!-- Seção 2: Gráfico -->
+  <section class="secao-grafico">
+    <h2>Gráfico da Função</h2>
+    <canvas id="grafico"></canvas>
+    <button id="btn-grafico" class="btn-plot">Plotar f(x)</button>
+  </section>
+
+  <!-- Seção 3: Créditos -->
+   <section class="secao-creditos">
+    <div class="pessoa">
+      <img src="marcos.jpg" alt="Sua foto">
+      <div>
+        <h3>Marcos Siqueira</h3>
+        <p>Estudante de Sistemas de Informação</p>
+      </div>
+    </div>
+    <div class="pessoa">
+      <img src="mateus.jpg" alt="Foto do companheiro">
+      <div>
+        <h3>Matheus</h3>
+        <p>Estudante de Ciências da Computação</p>
+      </div>
+    </div>
+  <script src="script.js"></script>
+</body>
+</html>
