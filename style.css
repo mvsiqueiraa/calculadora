@@ -13,7 +13,7 @@
   background: #fff;
   margin-bottom: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .cabecalho-ufopa .logo-ufopa {
@@ -26,7 +26,8 @@
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 4px;
-  color: #1f4e79;   /* Azul institucional */
+  color: #1f4e79;
+  /* Azul institucional */
 }
 
 .cabecalho-ufopa h2 {
@@ -44,7 +45,8 @@
 .cabecalho-ufopa h4 {
   font-size: 1.2rem;
   margin-top: 8px;
-  color: #0a6b2b;   /* Um verde para destaque */
+  color: #0a6b2b;
+  /* Um verde para destaque */
   font-weight: 600;
 }
 
@@ -69,7 +71,7 @@ body {
   width: 320px;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background: #fff;
 }
 
@@ -78,6 +80,7 @@ body {
   background: linear-gradient(90deg, #1f7bd9, #3bd1ff);
   color: white;
 }
+
 .topo h1 {
   font-size: 1.1rem;
   font-weight: 600;
@@ -98,7 +101,7 @@ body {
   background: #f7f7f7;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .passos-area h2 {
@@ -115,18 +118,50 @@ body {
   font-size: 0.9rem;
 }
 
+/* --- Botões Rad/Deg --- */
+.botoes-rad-deg {
+  display: flex;
+  gap: 4px;
+  padding: 10px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  justify-content: center;
+}
+
+.botoes-rad-deg button {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.botoes-rad-deg button:hover {
+  background: #f0f0f0;
+}
+
+.botoes-rad-deg button.ativo {
+  background: #4CAF50;
+  color: #fff;
+  border-color: #4CAF50;
+}
+
 /* --- Botões Científicos --- */
 .botoes-cientificos {
-  display: flex;
-  gap: 6px;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 8px 6px;
   background: #fafafa;
   border-bottom: 1px solid #eee;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-items: stretch;
 }
+
 .botoes-cientificos button {
-  padding: 8px 10px;
+  width: 100%;
+  padding: 10px 6px;
   font-size: 0.95rem;
   border-radius: 8px;
   border: 1px solid #ddd;
@@ -138,10 +173,11 @@ body {
 .botoes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
+  gap: 4px;
   padding: 12px;
   background: #fff;
 }
+
 .botoes button {
   padding: 14px;
   font-size: 1rem;
@@ -151,16 +187,24 @@ body {
   background: #fafafa;
   transition: all 0.12s;
 }
+
 .botoes button:hover {
   filter: brightness(.98);
   transform: translateY(-1px);
 }
+
 .botoes button:active {
   transform: translateY(0);
 }
 
-.igual { background: #4CAF50; color: #fff; }
-.limpar { background: #ffdddd; }
+.igual {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.limpar {
+  background: #ffdddd;
+}
 
 /* --- Seção Gráfico --- */
 .secao-grafico {
@@ -169,7 +213,7 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #grafico {
@@ -186,7 +230,10 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
-.btn-plot:hover { background: #45a049; }
+
+.btn-plot:hover {
+  background: #45a049;
+}
 
 /* --- Seção Créditos --- */
 .secao-creditos {
@@ -205,7 +252,7 @@ body {
   background: #fff;
   padding: 15px 20px;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .secao-creditos img {
@@ -215,8 +262,14 @@ body {
   object-fit: cover;
 }
 
-.secao-creditos h3 { font-size: 1.1rem; }
-.secao-creditos p { font-size: 0.9rem; color: #555; }
+.secao-creditos h3 {
+  font-size: 1.1rem;
+}
+
+.secao-creditos p {
+  font-size: 0.9rem;
+  color: #555;
+}
 
 /* --- Responsividade --- */
 @media (max-width: 1024px) {
@@ -224,15 +277,132 @@ body {
     flex-direction: column;
     gap: 20px;
   }
+
   .passos-area {
     max-height: 300px;
   }
 }
 
+/* --- Área de Exibição Visual de Frações --- */
+.fracao-visual-area {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.fracao-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.fracao-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.numerador {
+  padding: 2px 10px;
+  text-align: center;
+  min-width: 40px;
+}
+
+.linha-divisoria {
+  width: 50px;
+  height: 2px;
+  background: #333;
+  margin: 2px 0;
+}
+
+.denominador {
+  padding: 2px 10px;
+  text-align: center;
+  min-width: 40px;
+}
+
+.resultado-decimal {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.controles-fracao {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.controles-fracao button {
+  padding: 5px 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.3s;
+}
+
+.controles-fracao button:hover {
+  background: #0056b3;
+}
+
+.controles-fracao button:active {
+  transform: translateY(1px);
+}
+
 @media (max-width: 420px) {
-  .calculadora { width: 94vw; }
-  .botoes { gap: 5px; }
-  .botoes-cientificos { gap: 4px; }
-  .secao-creditos .pessoa { flex-direction: column; text-align: center; }
-  .secao-creditos img { width: 60px; height: 60px; }
+  .calculadora {
+    width: 94vw;
+  }
+
+  .botoes {
+    gap: 5px;
+  }
+
+  .botoes-cientificos {
+    gap: 4px;
+  }
+
+  .secao-creditos .pessoa {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .secao-creditos img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .fracao-container {
+    font-size: 1.5rem;
+  }
+
+  .linha-divisoria {
+    width: 60px;
+  }
+
+  .controles-fracao {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .controles-fracao button {
+    width: 100%;
+    max-width: 200px;
+  }
 }
