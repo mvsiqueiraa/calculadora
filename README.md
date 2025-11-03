@@ -116,8 +116,8 @@ Funções como Derivada, Limite, Fatorial e Log com base usam uma caixa de diál
 
 | Foto | Nome | Curso |
 | :---: | :---: | :---: |
-| `[foto_marcos.jpg]` | **Marcos Siqueira** | Sistemas de Informação |
-| `[foto_mateus.jpg]` | **Matheus** | Ciência da Computação |
+| `[marcos.jpg]` | **Marcos Siqueira** | Sistemas de Informação |
+| `[mateus.jpg]` | **Matheus** | Ciência da Computação |
 
 ---
 
