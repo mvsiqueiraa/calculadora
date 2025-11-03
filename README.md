@@ -61,11 +61,11 @@ Como este é um projeto *front-end* puro, não é necessário um servidor ou pro
 
 1.  Clone este repositório:
     ```bash
-    git clone [URL-DO-SEU-REPOSITORIO-AQUI]
+    git clone [(https://github.com/mvsiqueiraa/calculadora)]
     ```
 2.  Navegue até a pasta do projeto:
     ```bash
-    cd [NOME-DA-PASTA-DO-PROJETO]
+    cd [calculadora]
     ```
 3.  Abra o arquivo `index.html` diretamente no seu navegador de preferência.
 
