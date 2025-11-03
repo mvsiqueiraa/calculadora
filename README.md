@@ -61,11 +61,11 @@ Como este é um projeto *front-end* puro, não é necessário um servidor ou pro
 
 1.  Clone este repositório:
     ```bash
-    git clone [(https://github.com/mvsiqueiraa/calculadora)]
+    git clone https://github.com/mvsiqueiraa/calculadora
     ```
 2.  Navegue até a pasta do projeto:
     ```bash
-    cd [calculadora]
+    cd calculadora
     ```
 3.  Abra o arquivo `index.html` diretamente no seu navegador de preferência.
 
@@ -114,10 +114,10 @@ Funções como Derivada, Limite, Fatorial e Log com base usam uma caixa de diál
 
 ## 👨‍💻 Autores
 
-| Foto | Nome | Curso |
-| :---: | :---: | :---: |
-| `[marcos.jpg]` | **Marcos Siqueira** | Sistemas de Informação |
-| `[mateus.jpg]` | **Matheus** | Ciência da Computação |
+| Nome | Curso |
+| :---: | :---: |
+| **Marcos Siqueira** | Sistemas de Informação |
+| **Matheus** | Ciência da Computação |
 
 ---
 
