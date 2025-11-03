@@ -4,7 +4,8 @@
 
 Uma aplicação web interativa que oferece funcionalidades avançadas de cálculo, visualização gráfica de funções e explicações passo a passo dos procedimentos de resolução.
 
-![Imagem da Calculadora IEG](screenshot.png)
+![Imagem da Calculadora IEG](<img width="1755" height="2369" alt="image" src="https://github.com/user-attachments/assets/e088ff22-258f-4cad-846d-3e1a52120751" />
+)
 
 ---
 
