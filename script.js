@@ -1,4 +1,4 @@
-// script.js – Calculadora científica com passo a passo, gráfico e créditos
+// Calculadora científica
 class Calculadora {
   constructor() {
     this.display = document.getElementById('display');
@@ -30,7 +30,7 @@ class Calculadora {
       if (e.key === 'Backspace') this.apagarUltimo();
     });
 
-    // Botão de gráfico
+    // Botão do gráfico
     document.getElementById('btn-grafico')
       .addEventListener('click', () => this.plotarGrafico());
   }
@@ -64,7 +64,7 @@ class Calculadora {
     }
   }
 
-  /* -------- Manipulação de expressão -------- */
+  // Manipulação de expressão
   adicionarNumero(n) {
     if (this.limparAoDigitar || this.expressaoAtual === '0') {
       this.expressaoAtual = n;
@@ -109,7 +109,7 @@ class Calculadora {
     this.atualizarDisplay();
   }
 
-  /* -------- Cálculos -------- */
+  // Cálculos
   sanitizar(expr) {
     return String(expr)
       .replace(/×/g, '*')
@@ -124,9 +124,7 @@ class Calculadora {
   calcular() {
     const expr = this.sanitizar(this.expressaoAtual);
     try {
-      // simplifica direto a string da expressão
       const simplificado = math.simplify(expr).toString();
-      // avalia a expressão Forma simplificada: ${simplificado}
 
       // Criar contexto personalizado com todas as funções trigonométricas
       const contexto = {
@@ -157,7 +155,7 @@ Resultado final: ${texto}</pre>`;
     this.atualizarDisplay();
   }
 
-
+// Função que calcula a derivada
   calcularDerivada() {
     const func = prompt("Função para derivar (ex: x^2 + 2x):");
     if (!func) return;
@@ -176,6 +174,7 @@ f'(x) = ${deriv}</pre>`;
     this.atualizarDisplay();
   }
 
+// Função que calcula o limite
   calcularLimite() {
     const func = prompt("Função (ex: (x^2 - 1)/(x - 1)):");
     if (!func) return;
@@ -203,6 +202,7 @@ Resultado: ${resultado}</pre>`;
     this.atualizarDisplay();
   }
 
+// Calcula a função inversa (1/x)
   calcularInversa() {
     const valorAtual = parseFloat(this.expressaoAtual);
     if (!isNaN(valorAtual) && valorAtual !== 0) {
@@ -240,7 +240,6 @@ Resultado: ${resultado}</pre>`;
         this.passos.innerHTML = `<pre>Erro: Raiz par de número negativo não é real.</pre>`;
         this.expressaoAtual = 'Erro';
       } else {
-        // Calcular raiz usando x^(1/n)
         const resultado = Math.pow(x, 1/n);
         this.registrarHistorico(`${n}√${x}`, resultado.toString());
         this.passos.innerHTML =
@@ -257,19 +256,16 @@ Resultado: ${resultado}</pre>`;
     this.atualizarDisplay();
   }
 
+  // Função que calcula o fatorial
   calcularFatorial() {
     try {
-      // Solicita o número para calcular o fatorial
       const numeroExpr = prompt('Digite o número para calcular o fatorial (n):');
-      if (numeroExpr === null) return; // Usuário cancelou
+      if (numeroExpr === null) return;
       
-      // Sanitizar a expressão
       const numeroExprSanitizada = this.sanitizar(numeroExpr);
       
-      // Avaliar a expressão usando math.evaluate
       const numero = math.evaluate(numeroExprSanitizada);
       
-      // Validações
       if (!Number.isInteger(numero)) {
         this.passos.innerHTML = `<pre>Erro: O número deve ser um inteiro.
 Número inserido: ${numeroExpr} = ${numero}</pre>`;
@@ -288,7 +284,6 @@ Número inserido: ${numeroExpr} = ${numero}</pre>`;
         return;
       }
       
-      // Calcular o fatorial
       let resultado = 1;
       let calculo = '';
       
@@ -328,23 +323,18 @@ Detalhes: ${error.message}</pre>`;
 
   calcularLogaritmo() {
     try {
-      // Solicita a base do logaritmo
       const baseExpr = prompt('Digite a base do logaritmo (b):');
-      if (baseExpr === null) return; // Usuário cancelou
+      if (baseExpr === null) return;
       
-      // Solicita o argumento do logaritmo
       const argumentoExpr = prompt('Digite o argumento do logaritmo (x):');
-      if (argumentoExpr === null) return; // Usuário cancelou
+      if (argumentoExpr === null) return;
       
-      // Sanitizar as expressões
       const baseExprSanitizada = this.sanitizar(baseExpr);
       const argumentoExprSanitizado = this.sanitizar(argumentoExpr);
       
-      // Avaliar as expressões usando math.evaluate
       const base = math.evaluate(baseExprSanitizada);
       const argumento = math.evaluate(argumentoExprSanitizado);
       
-      // Validações
       if (base <= 0) {
         this.passos.innerHTML = `<pre>Erro: A base deve ser maior que 0.
 Base inserida: ${baseExpr} = ${base}</pre>`;
@@ -372,7 +362,6 @@ Argumento inserido: ${argumentoExpr} = ${argumento}</pre>`;
         return;
       }
       
-      // Calcular o logaritmo usando a fórmula de mudança de base: log_b(x) = ln(x) / ln(b)
       const lnArgumento = Math.log(argumento);
       const lnBase = Math.log(base);
       const resultado = lnArgumento / lnBase;
@@ -402,9 +391,8 @@ Detalhes: ${error.message}</pre>`;
 
   calcularOperacoesFracoes() {
     try {
-      // Pergunta quantas frações o usuário quer usar
       const quantidadeStr = prompt('Quantas frações você quer usar?');
-      if (quantidadeStr === null) return; // Usuário cancelou
+      if (quantidadeStr === null) return;
       
       const quantidade = parseInt(quantidadeStr);
       if (isNaN(quantidade) || quantidade < 1) {
@@ -415,19 +403,16 @@ Detalhes: ${error.message}</pre>`;
         return;
       }
 
-      // Se for apenas 1 fração, usar a lógica da fração simples
       if (quantidade === 1) {
         const numeradorExpr = prompt('Digite o numerador:');
-        if (numeradorExpr === null) return; // Usuário cancelou
+        if (numeradorExpr === null) return; 
         
         const denominadorExpr = prompt('Digite o denominador:');
-        if (denominadorExpr === null) return; // Usuário cancelou
+        if (denominadorExpr === null) return;
         
-        // Sanitizar as expressões
         const numExprSanitizada = this.sanitizar(numeradorExpr);
         const denExprSanitizada = this.sanitizar(denominadorExpr);
         
-        // Avaliar as expressões usando math.evaluate
         const num = math.evaluate(numExprSanitizada);
         const den = math.evaluate(denExprSanitizada);
         
@@ -472,12 +457,11 @@ Resultado: ${num} ÷ ${den} = ${resultado}</pre>`;
       // Coleta as frações
       for (let i = 0; i < quantidade; i++) {
         const numeradorExpr = prompt(`Fração ${i + 1} - Digite o numerador (pode ser uma expressão):`);
-        if (numeradorExpr === null) return; // Usuário cancelou
+        if (numeradorExpr === null) return; 
         
         const denominadorExpr = prompt(`Fração ${i + 1} - Digite o denominador (pode ser uma expressão):`);
-        if (denominadorExpr === null) return; // Usuário cancelou
+        if (denominadorExpr === null) return;
         
-        // Sanitizar e avaliar as expressões
         const numExprSanitizada = this.sanitizar(numeradorExpr);
         const denExprSanitizada = this.sanitizar(denominadorExpr);
         
@@ -506,7 +490,7 @@ Denominador: ${denominadorExpr} = ${den}</pre>`;
       // Coleta as operações entre as frações
       for (let i = 0; i < quantidade - 1; i++) {
         const operacao = prompt(`Operação entre fração ${i + 1} e fração ${i + 2}:\n+, -, *, /`);
-        if (operacao === null) return; // Usuário cancelou
+        if (operacao === null) return;
         
         if (!['+', '-', '*', '/'].includes(operacao)) {
           this.passos.innerHTML = `<pre>Erro: Operação inválida "${operacao}". Use apenas +, -, *, /</pre>`;
@@ -580,14 +564,14 @@ Detalhes: ${error.message}</pre>`;
     this.atualizarDisplay();
   }
 
-  /* -------- Histórico -------- */
+  // Histórico
   registrarHistorico(expr, resultado) {
     this.historico.unshift({ expr, resultado, t: new Date().toISOString() });
     if (this.historico.length > 50) this.historico.pop();
     localStorage.setItem('calc_historico', JSON.stringify(this.historico));
   }
 
-  /* -------- Plotar Gráfico -------- */
+  //Plotar Gráfico
   plotarGrafico() {
     const func = this.expressaoAtual;
     try {
@@ -608,6 +592,7 @@ Detalhes: ${error.message}</pre>`;
     this.display.innerText = this.expressaoAtual;
   }
 
+  // Alterna entre Radianos e Graus
   alternarModo(id) {
     if (id === 'btn-rad') {
       this.modoAngulo = 'rad';
@@ -632,9 +617,9 @@ Detalhes: ${error.message}</pre>`;
 
   converterAngulo(valor) {
     if (this.modoAngulo === 'deg') {
-      return valor * Math.PI / 180; // Converte graus para radianos
+      return valor * Math.PI / 180;
     }
-    return valor; // Já está em radianos
+    return valor;
   }
 
   // Funções trigonométricas que consideram o modo de ângulo
@@ -653,7 +638,7 @@ Detalhes: ${error.message}</pre>`;
   asinComModo(valor) {
     const resultado = Math.asin(valor);
     if (this.modoAngulo === 'deg') {
-      return resultado * 180 / Math.PI; // Converte radianos para graus
+      return resultado * 180 / Math.PI;
     }
     return resultado;
   }
@@ -661,7 +646,7 @@ Detalhes: ${error.message}</pre>`;
   acosComModo(valor) {
     const resultado = Math.acos(valor);
     if (this.modoAngulo === 'deg') {
-      return resultado * 180 / Math.PI; // Converte radianos para graus
+      return resultado * 180 / Math.PI;
     }
     return resultado;
   }
@@ -669,13 +654,13 @@ Detalhes: ${error.message}</pre>`;
   atanComModo(valor) {
     const resultado = Math.atan(valor);
     if (this.modoAngulo === 'deg') {
-      return resultado * 180 / Math.PI; // Converte radianos para graus
+      return resultado * 180 / Math.PI;
     }
     return resultado;
   }
 }
 
-/* -------- Inicialização -------- */
+// Inicialização
 window.addEventListener('DOMContentLoaded', () => {
   window.calc = new Calculadora();
 });
